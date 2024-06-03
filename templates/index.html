@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment analysis</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    body { 
+	background: #ffffff;
+	color: #000000;
+	font-size: 15px;
+	text-align:center;
+	letter-spacing:1.4px;
+    }
+    .navbar{
+        background-image: linear-gradient(90deg, rgba(17,223,169,1) 0%, rgba(3,60,88,1) 49%, rgba(10,32,50,1) 100%);
+        color: #ffffff;
+        height: 80px;
+        padding: 20px 60px;
+        margin-bottom: 30px;
+        width: 100%;
+        font-size: 40px;
+        padding-bottom: 5%;
+    }
+    .intro{
+        padding-top: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .input{
+        padding-top: 3%;
+        width: 100%; 
+	    margin-bottom: 10px; 
+	
+	    border: none;
+	    outline: none;
+	    padding: 10px;
+	    font-size: 40px;
+	    color: #fff;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	
+	    border-radius: 4px;
+	
+	    -webkit-transition: box-shadow .5s ease;
+	    -moz-transition: box-shadow .5s ease;
+	    -o-transition: box-shadow .5s ease;
+	    -ms-transition: box-shadow .5s ease;
+	    transition: box-shadow .5s ease;
+
+    }
+    .box{
+        height: 35px;
+        width: 400px;
+        border: 2px solid rgb(9, 16, 58);
+        border-radius: 4px;
+
+    }
+    .btn{
+        background-image: linear-gradient(90deg, rgba(17,223,169,1) 0%, rgba(3,60,88,1) 49%, rgba(10,32,50,1) 100%);
+        height: 35px;
+        width: 200px;
+        border-radius: 4px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        Sentiment analysis
+    </div>
+    <h1 class="intro">Understand the emotions behind the words. <span class="emoji" id="emoji">😊</span></h1>
+    <p class="content">Text sentiment analysis is a powerful tool that can help you to understand the emotions and opinions
+        expressed in your text data.</p>
+
+
+    <form class="input" action="/predict" method="post" autocomplete="off">
+            <input class="box" type="text" name="review" placeholder="Enter the text here" required="required" />
+            <button type="submit" class="btn" >Predict Sentiment</button>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+<script>
+    let isHappy = true;
+    const emojiElement = document.getElementById('emoji');
+
+    setInterval(() => {
+        if (isHappy) {
+            emojiElement.textContent = '😔';
+        } else {
+            emojiElement.textContent = '😊';
+        }
+        isHappy = !isHappy;
+        }, 2000);  // Change every 2 seconds
+</script>
+</body>
+</html>
