@@ -4,14 +4,14 @@ The use case here is review classification of Amazon Alexa customer feedbacks in
 # Working 
 ![](https://github.com/adits16/Sentiment-Analysis-using-Tensorflow/blob/main/sentiment_analysis.gif)
 # Dependencies
-Python 3.x
-TensorFlow
-Keras
-Flask
-NumPy
-Pandas
-Scikit-learn
-SpaCy
+1. Python 3.x
+2. TensorFlow
+3. Keras
+4. Flask
+5. NumPy
+6. Pandas
+7. Scikit-learn
+8. SpaCy
 # To run on Windows
 1. Clone the repository to your local machine.
 2. Install the required dependencies using pip install -r requirements.txt.
